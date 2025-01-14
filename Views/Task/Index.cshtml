@@ -1,0 +1,31 @@
+﻿@*
+    Clase 1 Video 2
+*@
+
+@model IEnumerable<TaskManager.Models.Task>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Task List</h1>
+
+<a href="@Url.Action("Create")">Create new task</a>
+
+<ul>
+    @foreach (var task in Model)
+    {
+        <li>
+            @Html.ActionLink(task.Title, "Detail", new { id = task.Id }) - @task.Description
+
+            @if (task.IsCompleted)
+            {
+                <span class="text-success">Completed</span>
+            }
+            else
+            {
+                <span class="text-danger">Pending</span>
+            }
+        </li>
+    }
+</ul>

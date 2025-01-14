@@ -1,0 +1,29 @@
+﻿@*
+    Clase 1 Video 2
+*@
+
+@model TaskManager.Models.Task
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<form asp-action="Create" method="post">
+    <div>
+        <label asp-for="Title">Title</label>
+        <input asp-for="Title" />
+    </div>
+    <div>
+        <label asp-for="Description">Description</label>
+        <textarea asp-for="Description"></textarea>
+    </div>
+    <div>
+        <label asp-for="IsCompleted">Completed</label>
+        <input type="checkbox" asp-for="IsCompleted" />
+    </div>
+    <button type="submit" class="btn btn-primary">Create</button>
+</form>
+
+<a href="@Url.Action("Index")">Back to Index</a>

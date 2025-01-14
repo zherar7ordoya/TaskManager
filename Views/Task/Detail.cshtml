@@ -1,0 +1,24 @@
+﻿@model TaskManager.Models.Task
+
+@{
+    ViewData["Title"] = "Detail";
+}
+
+<h1>@Model.Title</h1>
+
+<p>@Model.Description</p>
+
+@if (Model.IsCompleted)
+{
+    <p>
+        <span class="text-success">Completed</span>
+    </p>
+}
+else
+{
+    <p>
+        <span class="text-danger">Pending</span>
+    </p>
+}
+
+<a href="@Url.Action("Index")">Back to Index</a>

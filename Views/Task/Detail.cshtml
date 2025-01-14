@@ -4,21 +4,29 @@
     ViewData["Title"] = "Detail";
 }
 
-<h1>@Model.Title</h1>
-
-<p>@Model.Description</p>
-
-@if (Model.IsCompleted)
-{
-    <p>
-        <span class="text-success">Completed</span>
-    </p>
-}
-else
-{
-    <p>
-        <span class="text-danger">Pending</span>
-    </p>
-}
-
-<a href="@Url.Action("Index")">Back to Index</a>
+<div class="container mt-5">
+    <div class="card shadow-sm">
+        <div class="card-header bg-info text-white">
+            <h1 class="h3 mb-0">@Model.Title</h1>
+        </div>
+        <div class="card-body">
+            <p class="mb-4">
+                <strong>Description:</strong> @Model.Description
+            </p>
+            <p>
+                <strong>Status:</strong>
+                @if (Model.IsCompleted)
+                {
+                    <span class="badge bg-success">Completed</span>
+                }
+                else
+                {
+                    <span class="badge bg-danger">Pending</span>
+                }
+            </p>
+        </div>
+        <div class="card-footer text-end">
+            <a href="@Url.Action("Index")" class="btn btn-secondary">Back to Index</a>
+        </div>
+    </div>
+</div>

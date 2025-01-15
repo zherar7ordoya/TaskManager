@@ -1,9 +1,15 @@
-namespace TaskManager.Models
-{
-    public class ErrorViewModel
-    {
-        public string? RequestId { get; set; }
+namespace TaskManager.Models;
 
-        public bool ShowRequestId => !string.IsNullOrEmpty(RequestId);
+public record ErrorViewModel(string? RequestId)
+{
+    /// <summary>
+    /// Determines whether the RequestId is not null or empty.
+    /// </summary>
+    /// <returns>
+    /// <c>true</c> if the RequestId is not null or empty; otherwise, <c>false</c>.
+    /// </returns>
+    public System.Boolean GetShowRequestId()
+    {
+        return !string.IsNullOrEmpty(RequestId);
     }
 }
